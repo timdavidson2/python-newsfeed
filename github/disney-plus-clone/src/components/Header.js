@@ -66,11 +66,26 @@ const NavMenu = styled.div`
     span {
       font-size: 12px;
       letter-spacing: 1.5px;
+      position: relative;
 
       &:after {
         content: '';
         height: 2px;
         background: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        opacity: 0;
+        transform-origin: left center;
+        transition: all 250ms;
+        transform: scaleX(0);
+      }
+    }
+    &:hover {
+      span:after {
+        transform: scaleX(1);
+        opacity: 1;
       }
     }
   }
